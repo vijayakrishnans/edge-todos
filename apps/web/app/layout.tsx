@@ -7,7 +7,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: SITE_NAME,
-  description: "Next.js Server Actions Demo + Cloudflare D1",
+  description: "A shared, public todo list running on Cloudflare Workers and D1.",
 };
 
 export default function RootLayout({

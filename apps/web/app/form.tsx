@@ -4,6 +4,7 @@ import { useRef } from "react";
 import { useFormStatus } from "react-dom";
 
 import { addTodo } from "./actions";
+import { MAX_TODO_LENGTH } from "@/lib/todo-input";
 
 function Submit() {
   const { pending } = useFormStatus();
@@ -32,7 +33,8 @@ export function Form() {
       <input
         id="description"
         name="description"
-        placeholder="Insert new todo"
+        placeholder="Add a todo and press Enter"
+        maxLength={MAX_TODO_LENGTH}
         className="w-full text-black outline-none"
         required
         aria-label="Description of todo"

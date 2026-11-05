@@ -3,11 +3,15 @@
 import { revalidatePath } from "next/cache";
 
 import { db } from "@/lib/turso";
+import { parseDescription } from "@/lib/todo-input";
 
 export const addTodo = async (formData: FormData) => {
+  const description = parseDescription(formData.get("description"));
+  if (description === null) return;
+
   await db.execute({
     sql: "INSERT INTO todos (description) VALUES (?)",
-    args: [formData.get("description") as string],
+    args: [description],
   });
 
   revalidatePath("/");

@@ -27,7 +27,11 @@ export async function TodoList() {
   // smoke looks for it, because only a Worker that queried the migrated table
   // renders it. Hidden while empty, as upstream rendered nothing.
   return (
-    <ul className="space-y-3" data-todos={rows.length} hidden={rows.length === 0}>
+    <>
+      {rows.length === 0 && (
+        <p className="py-3 text-center text-gray-500">Nothing here yet. Add the first todo.</p>
+      )}
+      <ul className="space-y-3" data-todos={rows.length} hidden={rows.length === 0}>
       {rows.map((row, index) => (
         <Todo
           key={index}
@@ -37,6 +41,7 @@ export async function TodoList() {
           }}
         />
       ))}
-    </ul>
+      </ul>
+    </>
   );
 }

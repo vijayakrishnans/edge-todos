@@ -13,9 +13,11 @@ export default function Home() {
       <div className="space-y-3 text-center">
         <h1 className="text-3xl font-medium">{SITE_NAME}</h1>
         <p className="text-gray-500">
-          SQLite on Cloudflare D1 ·{" "}
+          A shared todo list on Cloudflare Workers and D1. It&apos;s public, so anyone
+          can add or remove items and anyone can read them. Please don&apos;t put
+          anything private here.{" "}
           <a href={SOURCE_URL} className="underline">
-            source
+            Source
           </a>
         </p>
       </div>
