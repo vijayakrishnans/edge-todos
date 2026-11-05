@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Shown only beside an empty list, so TodoList stays a plain <ul>. */
+.todo-empty {
+  display: none;
+}
+
+ul[data-todos="0"] + .todo-empty {
+  display: block;
+}

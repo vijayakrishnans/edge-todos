@@ -1,0 +1,17 @@
+apiVersion: orun.io/v1
+kind: TaskContract
+metadata:
+  name: ET-1
+spec:
+  goal: Edge Todos reads as its own product and says plainly that its list is shared and public.
+  affects:
+    - default/edge-todos/web
+    - default/edge-todos/web-tests
+    - apps/web/**
+    - tests/web/**
+    - tasks/**
+  doneWhen:
+    - The live page states that the list is shared and public, and shows a message when empty.
+    - The server refuses a todo that is empty or over 200 characters.
+    - Tests, typecheck and lint are green.
+  gates: []
