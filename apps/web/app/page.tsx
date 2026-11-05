@@ -24,6 +24,9 @@ export default function Home() {
 
       <div className="space-y-3">
         <TodoList />
+        <p className="todo-empty py-3 text-center text-gray-500">
+          Nothing here yet. Add the first todo.
+        </p>
         <Form />
       </div>
     </main>
